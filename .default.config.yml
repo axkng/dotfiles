@@ -37,8 +37,8 @@ dockitems_persist:
   - name: "Google Chrome"
     path: "/Applications/Google Chrome.app/"
     pos: 5
-  - name: "iTerm2"
-    path: "/System/Applications/iTerm2.app/"
+  - name: "Ghostty"
+    path: "/System/Applications/Ghostty.app/"
     pos: 6
   - name: "VSCodium"
     path: "/Applications/VSCodium.app/"
@@ -94,8 +94,6 @@ dotfiles_files:
 homebrew_installed_packages:
   - ssh-copy-id
   - wget
-  - terraform
-  - fzf
   - Kubernetes-cli
   - curl
   - telnet
@@ -127,6 +125,7 @@ homebrew_installed_packages:
   - mcfly
   - hashicorp/tap/terraform
   - hashicorp/tap/packer
+  - neovim
 
 homebrew_taps:
   - homebrew/core
@@ -140,21 +139,18 @@ homebrew_cask_apps:
   - google-chrome
   - signal
   - steam
-  - nextcloud
   - telegram-desktop
   - spotify
-  - vscodium
+  - ghostty
   - thunderbird
   - keepassxc
-  - font-code-new-roman-nerd-font
-  - iterm2
   - rectangle
   - libreoffice
   - balenaetcher
   - teamviewer
   - via
   - raspberry-pi-imager
-  - logitech-g-hub
+  - raycast
 
 # See `geerlingguy.mas` role documentation for usage instructions.
 mas_installed_apps:

@@ -1,0 +1,16 @@
+[user]
+  email = git@axk.io
+  name = Furragen
+[core]
+  excludesfile = ~/.gitignore
+[color]
+  branch = auto
+  diff = auto
+  interactive = auto
+  status = auto
+[init]
+  defaultBranch = main
+[credential]
+  helper = osxkeychain
+[push]
+  default = simple

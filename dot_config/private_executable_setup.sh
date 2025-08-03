@@ -100,8 +100,5 @@ else
   echo "oh my zsh is already installed."
 fi
 
-echo "install LazyVim"
-git clone https://github.com/LazyVim/starter ~/.config/nvim
-
 echo "apply dotfiles"
 chezmoi init git@github.com:axkng/dotfiles.git

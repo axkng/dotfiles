@@ -63,6 +63,7 @@ packages=(
   pre-commit
   gitleaks
   uv
+  cloudflare-wrangler
 )
 brew install ${packages[@]}
 

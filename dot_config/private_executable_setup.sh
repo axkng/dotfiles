@@ -23,6 +23,7 @@ brew update
 
 echo "add needed taps"
 brew tap hashicorp/tap
+brew tap supabase/tap
 
 echo "install software with Homebrew"
 packages=(
@@ -64,6 +65,7 @@ packages=(
   gitleaks
   uv
   cloudflare-wrangler
+  supabase/tap/supabase
 )
 brew install ${packages[@]}
 

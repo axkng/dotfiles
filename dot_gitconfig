@@ -14,3 +14,5 @@
   helper = osxkeychain
 [push]
   default = simple
+[coderabbit]
+	machineId = cli/54d9afe6b52643d297fd80e0f072e03e

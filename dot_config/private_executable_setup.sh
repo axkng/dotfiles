@@ -66,6 +66,7 @@ packages=(
   uv
   cloudflare-wrangler
   supabase/tap/supabase
+  pnpm
 )
 brew install ${packages[@]}
 
@@ -75,7 +76,6 @@ casks=(
   ghostty
   raycast
   keepassxc
-  claude-code
   claude
   chatgpt
   firefox
@@ -95,6 +95,17 @@ brew cleanup
 echo "install cdk"
 /opt/homebrew/bin/npm install -g aws-cdk
 
+echo "install claude-code"
+/opt/homebrew/bin/npm install -g @anthropic-ai/claude-code
+
+echo "install global mcps"
+/opt/homebrew/bin/claude mcp add --scope user playwright npx @playwright/mcp@latest
+/opt/homebrew/bin/claude mcp add --scope user cloudflare npx mcp-remote https://observability.mcp.cloudflare.com/sse
+/opt/homebrew/bin/claude mcp add --scope user chrome-devtools npx chrome-devtools-mcp@latest
+
+echo "install qlty"
+curl https://qlty.sh | bash
+
 echo "Check if oh-my-zsh is present, install if it's missing"
 if [ ! -d "$HOME/.oh-my-zsh" ]; then
   echo "Installing oh my zsh..."
@@ -105,3 +116,6 @@ fi
 
 echo "apply dotfiles"
 chezmoi init git@github.com:axkng/dotfiles.git
+
+#TODO
+# add install for code rabbit when they are proven

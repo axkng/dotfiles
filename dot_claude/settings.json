@@ -70,7 +70,21 @@
   },
   "hooks": {
     "PreToolUse": [],
-    "PostToolUse": [],
+    "PostToolUse": [
+      {
+        "matcher": "Write|Edit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "qlty fmt --all"
+          },
+          {
+            "type": "command",
+            "command": "qlty check --all"
+          }
+        ]
+      }
+    ],
     "Stop": []
   },
   "statusLine": {

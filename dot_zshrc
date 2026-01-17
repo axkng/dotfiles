@@ -40,3 +40,10 @@ export HOMEBREW_AUTO_UPDATE_SECS=604800
 
 eval "$(starship init zsh)"
 eval "$(mcfly init zsh)"
+
+# bun completions
+[ -s "/Users/dermock/.bun/_bun" ] && source "/Users/dermock/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"

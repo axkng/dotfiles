@@ -1,22 +1,88 @@
 {
   "env": {
-    "BASH_MAX_TIMEOUT_MS": "600000",
-    "BASH_DEFAULT_TIMEOUT_MS": "600000"
+    "MAX_MCP_OUTPUT_TOKENS": "10000",
+    "MAX_THINKING_TOKENS": "31999",
+    "CLAUDE_CODE_MAX_OUTPUT_TOKENS": "63999",
+    "DISABLE_NON_ESSENTIAL_MODEL_CALLS": "true",
+    "DISABLE_TELEMETRY": "true"
+  },
+  "permissions": {
+    "allow": [
+      "Bash(qlty check:*)",
+      "Bash(qlty fmt:*)",
+      "Bash(coderabbit:*)",
+      "Bash(npm run build:*)",
+      "Bash(npm run build:check:*)",
+      "Bash(cat:*)",
+      "Bash(cp:*)",
+      "Bash(find:*)",
+      "Bash(grep:*)",
+      "Bash(rg:*)",
+      "Bash(ripgrep:*)",
+      "Bash(fd:*)",
+      "Bash(ls:*)",
+      "Bash(mkdir:*)",
+      "Bash(mv:*)",
+      "Bash(python:*)",
+      "Bash(rg:*)",
+      "Bash(ruff check:*)",
+      "Bash(ruff format:*)",
+      "Bash(uv add:*)",
+      "Bash(uv pip show:*)",
+      "Bash(uv pip:*)",
+      "Bash(uv run:*)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(npx tsc:*)",
+      "Bash(npx astro:*)",
+      "Bash(wrangler dev:*)",
+      "Edit",
+      "Glob",
+      "Grep",
+      "NotebookEdit",
+      "Read",
+      "TodoWrite",
+      "WebFetch",
+      "WebSearch",
+      "Write",
+      "mcp__chrome-devtools__fill",
+      "mcp__chrome-devtools__fill_form",
+      "mcp__chrome-devtools__wait_for",
+      "mcp__chrome-devtools__navigate_page",
+      "mcp__chrome-devtools__new_page",
+      "mcp__chrome-devtools__take_snapshot",
+      "mcp__chrome-devtools__click",
+      "mcp__chrome-devtools__list_network_requests",
+      "mcp__chrome-devtools__list_pages",
+      "mcp__chrome-devtools__fill",
+      "mcp__chrome-devtools__fill_form",
+      "mcp__chrome-devtools__wait_for",
+      "mcp__chrome-devtools__take_screenshot",
+      "mcp__chrome-devtools__list_console_messages",
+      "mcp__chrome-devtools__evaluate_script",
+      "mcp__chrome-devtools__handle_dialog",
+      "mcp__chrome-devtools__press_key",
+      "mcp__chrome-devtools__get_console_message",
+      "mcp__plugin_claude-mem_claude-mem-search__search",
+      "mcp__plugin_claude-mem_claude-mem-search__get_batch_observations"
+    ],
+    "deny": []
   },
   "hooks": {
     "PreToolUse": [],
-    "PostToolUse": [
-      {
-        "matcher": "Write|Edit|MultiEdit",
-        "hooks": [
-          {
-            "type": "command",
-            "command": "qlty fmt --all && qlty check --all"
-          }
-        ]
-      }
-    ],
+    "PostToolUse": [],
     "Stop": []
   },
+  "statusLine": {
+    "type": "command",
+    "command": "npx -y ccstatusline@latest",
+    "padding": 0
+  },
+  "enabledPlugins": {
+    "claude-mem@thedotmack": true,
+    "pyright-lsp@claude-plugins-official": true,
+    "typescript-lsp@claude-plugins-official": true
+  },
+  "outputStyle": "default",
   "alwaysThinkingEnabled": true
 }

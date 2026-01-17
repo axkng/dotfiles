@@ -66,6 +66,7 @@ packages=(
   uv
   cloudflare-wrangler
   supabase/tap/supabase
+  oven-sh/bun/bun
   pnpm
 )
 brew install ${packages[@]}
@@ -98,10 +99,16 @@ echo "install cdk"
 echo "install claude-code"
 /opt/homebrew/bin/npm install -g @anthropic-ai/claude-code
 
-echo "install global mcps"
-/opt/homebrew/bin/claude mcp add --scope user playwright npx @playwright/mcp@latest
-/opt/homebrew/bin/claude mcp add --scope user cloudflare npx mcp-remote https://observability.mcp.cloudflare.com/sse
+echo "install happy"
+/opt/homebrew/bin/npm install -g happy-coder@latest
+
+echo "install clawdbot"
+/opt/homebrew/bin/npm install -g clawdbot@latest
+
+echo "install global mcps and plugins"
 /opt/homebrew/bin/claude mcp add --scope user chrome-devtools npx chrome-devtools-mcp@latest
+/opt/homebrew/bin/claude plugin install pyright-lsp@claude-plugins-official
+/opt/homebrew/bin/claude plugin install typescript-lsp@claude-plugins-official
 
 echo "install qlty"
 curl https://qlty.sh | bash
@@ -119,3 +126,4 @@ chezmoi init git@github.com:axkng/dotfiles.git
 
 #TODO
 # add install for code rabbit when they are proven
+# add superpowers by obra and possibly speckit?

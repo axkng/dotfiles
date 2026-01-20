@@ -12,7 +12,7 @@ alias du="dust"
 alias find="fd"
 alias grep="rg"
 alias vim="nvim"
-alias gi="git init && cp ~/.local/share/chezmoi/.pre-commit-config.yaml . && pre-commit install && qlty init"
+alias gi="git init && cp ~/.config/.pre-commit-config.yaml . && pre-commit install && qlty init"
 
 # Set zsh theme
 ZSH_THEME="catppuccin"

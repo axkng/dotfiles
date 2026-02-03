@@ -13,6 +13,7 @@ alias find="fd"
 alias grep="rg"
 alias vim="nvim"
 alias gi="git init && cp ~/.config/.pre-commit-config.yaml . && pre-commit install && qlty init"
+alias ca="chezmoi add"
 
 # Set zsh theme
 ZSH_THEME="catppuccin"

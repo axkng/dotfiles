@@ -72,15 +72,11 @@
     "PreToolUse": [],
     "PostToolUse": [
       {
-        "matcher": "Write|Edit",
+        "matcher": "Write|Edit|MultiEdit",
         "hooks": [
           {
             "type": "command",
             "command": "qlty fmt --all"
-          },
-          {
-            "type": "command",
-            "command": "qlty check --all"
           }
         ]
       }
@@ -93,9 +89,9 @@
     "padding": 0
   },
   "enabledPlugins": {
-    "claude-mem@thedotmack": true,
-    "pyright-lsp@claude-plugins-official": true,
-    "typescript-lsp@claude-plugins-official": true
+    "claude-mem@thedotmack": false,
+    "typescript-lsp@claude-plugins-official": false,
+    "pyright-lsp@claude-plugins-official": false
   },
   "outputStyle": "default",
   "alwaysThinkingEnabled": true

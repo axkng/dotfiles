@@ -24,6 +24,7 @@ brew update
 echo "add needed taps"
 brew tap hashicorp/tap
 brew tap supabase/tap
+brew tap facebook/fb
 
 echo "install software with Homebrew"
 packages=(
@@ -68,6 +69,7 @@ packages=(
   supabase/tap/supabase
   oven-sh/bun/bun
   pnpm
+  idb-companion
 )
 brew install ${packages[@]}
 
@@ -97,13 +99,13 @@ echo "install cdk"
 /opt/homebrew/bin/npm install -g aws-cdk
 
 echo "install claude-code"
-/opt/homebrew/bin/npm install -g @anthropic-ai/claude-code
+curl -fsSL https://claude.ai/install.sh | bash
 
 echo "install happy"
 /opt/homebrew/bin/npm install -g happy-coder@latest
 
-echo "install clawdbot"
-/opt/homebrew/bin/npm install -g clawdbot@latest
+#echo "install clawdbot"
+#/opt/homebrew/bin/npm install -g clawdbot@latest
 
 echo "install global mcps and plugins"
 /opt/homebrew/bin/claude mcp add --scope user chrome-devtools npx chrome-devtools-mcp@latest

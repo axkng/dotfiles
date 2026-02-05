@@ -70,6 +70,8 @@ packages=(
   oven-sh/bun/bun
   pnpm
   idb-companion
+  pyright
+  ruff
 )
 brew install ${packages[@]}
 
@@ -108,9 +110,10 @@ echo "install happy"
 #/opt/homebrew/bin/npm install -g clawdbot@latest
 
 echo "install global mcps and plugins"
-/opt/homebrew/bin/claude mcp add --scope user chrome-devtools npx chrome-devtools-mcp@latest
-/opt/homebrew/bin/claude plugin install pyright-lsp@claude-plugins-official
-/opt/homebrew/bin/claude plugin install typescript-lsp@claude-plugins-official
+claude mcp add --scope user chrome-devtools npx chrome-devtools-mcp@latest
+claude mcp add --scope user playwright npx @playwright/mcp@latest
+claude plugin install pyright-lsp@claude-plugins-official
+claude plugin install typescript-lsp@claude-plugins-official
 
 echo "install qlty"
 curl https://qlty.sh | bash

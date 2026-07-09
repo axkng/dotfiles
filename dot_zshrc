@@ -12,7 +12,7 @@ alias du="dust"
 alias find="fd"
 alias grep="rg"
 alias vim="nvim"
-alias gi="git init && cp ~/.config/.pre-commit-config.yaml . && pre-commit install && qlty init"
+alias gi="git init && cp ~/.config/.pre-commit-config.yaml . && pre-commit install && qlty init && git add -A && git commit -m 'intial commit'"
 alias ca="chezmoi add"
 
 # Set zsh theme
@@ -30,8 +30,14 @@ CATPPUCCIN_FLAVOR="mocha"
 # Enable plugins.
 plugins=(aws)
 
+#Android and Java stuff
+export JAVA_HOME=$(/usr/libexec/java_home -v 17)
+export JAVA_TOOL_OPTIONS="-Djava.net.preferIPv4Stack=true"
+export ANDROID_HOME="$HOME/Library/Android/sdk"
+export ANDROID_SDK_ROOT="$ANDROID_HOME"
+
 # Custom $PATH with extra locations.
-export PATH=/opt/homebrew/bin:/usr/local/bin:/usr/local/sbin:$HOME/bin:/usr/local/share:$HOME/.krew/bin:$HOME/.local/bin:$HOME/.qlty/bin:$PATH
+export PATH=/opt/homebrew/bin:/usr/local/bin:/usr/local/sbin:$HOME/bin:/usr/local/share:$HOME/.krew/bin:$HOME/.local/bin:$HOME/.qlty/bin:$ANDROID_HOME/platform-tools:$ANDROID_HOME/emulator:$ANDROID_HOME/cmdline-tools/latest/bin:$JAVA_HOME/bin:$PATH
 
 # Bash-style time output.
 #export TIMEFMT=$'\nreal\t%*E\nuser\t%*U\nsys\t%*S'
@@ -48,3 +54,6 @@ eval "$(mcfly init zsh)"
 # bun
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
+
+# The next line updates PATH for Nebius CLI.
+if [ -f '/Users/dermock/.nebius/path.zsh.inc' ]; then source '/Users/dermock/.nebius/path.zsh.inc'; fi

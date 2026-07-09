@@ -25,6 +25,8 @@ echo "add needed taps"
 brew tap hashicorp/tap
 brew tap supabase/tap
 brew tap facebook/fb
+brew tap mobile-dev-inc/tap
+brew tap cameroncooke/axe
 
 echo "install software with Homebrew"
 packages=(
@@ -72,6 +74,10 @@ packages=(
   idb-companion
   pyright
   ruff
+  mobile-dev-inc/tap/maestro
+  android-platform-tools
+  asc
+  axe
 )
 brew install ${packages[@]}
 
@@ -91,6 +97,8 @@ casks=(
   via
   libreoffice
   balena-etcher
+  temurin
+  obsidian
 )
 brew install --cask ${casks[@]}
 
@@ -106,14 +114,11 @@ curl -fsSL https://claude.ai/install.sh | bash
 echo "install happy"
 /opt/homebrew/bin/npm install -g happy-coder@latest
 
+echo "install higgsfield cli"
+/opt/homebrew/bin/npm install -g @higgsfield/cli
+
 #echo "install clawdbot"
 #/opt/homebrew/bin/npm install -g clawdbot@latest
-
-echo "install global mcps and plugins"
-claude mcp add --scope user chrome-devtools npx chrome-devtools-mcp@latest
-claude mcp add --scope user playwright npx @playwright/mcp@latest
-claude plugin install pyright-lsp@claude-plugins-official
-claude plugin install typescript-lsp@claude-plugins-official
 
 echo "install qlty"
 curl https://qlty.sh | bash
